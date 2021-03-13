@@ -3,11 +3,9 @@ from alias.models import Alias
 
 
 def check_alias(alias, target, date_from, date_to):
-    print('ok')
+    
     try:
-        print('ok1')
         alias_obj = Alias.objects.filter(target=target, alias=alias)
-        print('ok2')
         return {'success': 0,
                 'message': 'You already have such object'}
     except:
