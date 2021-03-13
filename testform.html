@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form action="http://127.0.0.1:8000/alias/alias/" method="post">
+    <ul>
+        <li>
+            <label for="alias">alias:</label>
+            <input type="text" id="alias" name="alias">
+        </li>
+        <li>
+            <label for="target">target:</label>
+            <input type="text" id="target" name="target">
+        </li>
+        <li>
+            <label for="date_from">date_from:</label>
+            <input type="datetime-local" step="0.001" id="date_from" name="date_from">
+        </li>
+        <li>
+            <label for="date_to">date_to:</label>
+            <input type="datetime-local" step="0.001" id="date_to" name="date_to">
+        </li>
+        <li>
+            <label for="replace">replace:</label>
+            <input type="checkbox" value="true" id="replace" name="replace">
+        </li>
+        <li>
+            <label for="existing_alias_id">existing_alias_id:</label>
+            <input type="text" id="existing_alias_id" name="existing_alias_id">
+        </li>
+        <li>
+            <label for="replace_at">replace_at:</label>
+            <input type="datetime-local" step="0.001" id="replace_at" name="replace_at">
+        </li>
+        <li>
+            <label for="new_alias_value">new_alias_value:</label>
+            <input type="text" id="new_alias_value" name="new_alias_value">
+        </li>
+        <li class="button">
+            <button type="submit">Confirm</button>
+        </li>
+    </ul>
+</form>
+
+</body>
+</html>
+
