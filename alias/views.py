@@ -38,7 +38,6 @@ class AliasView(viewsets.ModelViewSet):
             if date_to:
                 alias_obj.end = date_to
                 alias_obj.save()
-
         else:
             return Response(check)
 
@@ -47,6 +46,5 @@ class AliasView(viewsets.ModelViewSet):
             return Response(alias_replace(existing_alias_id,
                                           replace_at,
                                           new_alias_value))
-
         return Response({'success': 1,
                          'object alias': alias_obj.alias})
