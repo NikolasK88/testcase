@@ -15,6 +15,7 @@ class AliasView(viewsets.ModelViewSet):
     queryset = Alias.objects.all()
 
     def list(self, request):
+        # here we call the get_alias() function from alias.inc.getAlias
         return Response(get_alias(request).values())
 
     def create(self, request):
@@ -22,13 +23,13 @@ class AliasView(viewsets.ModelViewSet):
         target = request.POST.get('target', False)
         date_from = request.POST.get('date_from', False)
         date_to = request.POST.get('date_to', False)
-
-        replace = request.POST.get('replace', False)
         # if replace = 'true' we use def alias_replace()
+        replace = request.POST.get('replace', False)
         existing_alias_id = request.POST.get('existing_alias_id', False)
         replace_at = request.POST.get('replace_at', False)
         new_alias_value = request.POST.get('new_alias_value', False)
 
+        # call the check_alias() function from alias.inc.checkAlias
         check = check_alias(alias, target, date_from, date_to)
         if check is True:
             alias_obj = Alias.objects.create(alias=alias,
@@ -42,6 +43,7 @@ class AliasView(viewsets.ModelViewSet):
             return Response(check)
 
         if replace == 'true':
+            # call the alias_replace() function from alias.inc.replaceAlias
             return Response(alias_replace(existing_alias_id,
                                           replace_at,
                                           new_alias_value))
