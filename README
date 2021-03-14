@@ -8,15 +8,15 @@ for checking model:
     http://127.0.0.1:8000/admin (Alias)- username: admin, passwoed: admin
 
     code you can find here:
-        testproject/alias/models.py
+        testcase/alias/models.py
 
 for checking GET request:
     http://127.0.0.1:8000/alias/alias/
     example: http://127.0.0.1:8000/alias/alias/?target=test_slug2&date_from=2021-03-10%2023:59:59.999999&date_to=2021-03-13%2023:59:59.999999
 
     code you can find:
-        testproject/alias/view.py (AliasView.list) - call function get_alias()
-        function get_alias() you can find here - testproject/alias/inc/getAlias.py
+        testcase/alias/view.py (AliasView.list) - call function get_alias()
+        function get_alias() you can find here - testcase/alias/inc/getAlias.py
 
 for checking POST request:
     open in browser: testproject/testform.html
@@ -28,8 +28,8 @@ for checking POST request:
         you can fill last 3 fields(existing_alias_id, replace_at, new_alias_value) and check the box and press the confirmation button
 
     code you can find:
-        testproject/alias/view.py (AliasView.create)- call functions check_alias() and alias_replace()
+        testcase/alias/view.py (AliasView.create)- call functions check_alias() and alias_replace()
 
-        function check_alias() you can find here - testproject/alias/inc/checkAlias.py
-        function alias_replace() you can find here - testproject/alias/inc/replaceAlias.py
+        function check_alias() you can find here - testcase/alias/inc/checkAlias.py
+        function alias_replace() you can find here - testcase/alias/inc/replaceAlias.py
 
